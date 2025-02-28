@@ -24,8 +24,7 @@ async def start(client, message):
         chat_id=message.from_user.id,
         text=script.START_TXT.format(message.from_user.mention),
         reply_markup=rm,
-        parse_mode=enums.ParseMode.HTML,
-        link_preview=False
+        parse_mode=enums.ParseMode.HTML
     )
     return
 
