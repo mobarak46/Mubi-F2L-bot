@@ -17,7 +17,7 @@ Nᴀᴍᴇ - {}"""
     RESTART_TXT = """
 <b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
 
-📅 Dᴀᴛᴇ : <code>{}</code>
-⏰ Tɪᴍᴇ : <code>{}</code>
-🌐 Tɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>"""
+📅 𝐃ᴀᴛᴇ : <code>{}</code>
+⏰ 𝐓ɪᴍᴇ : <code>{}</code>
+🌐 𝐓ɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
+🛠️ 𝐁ᴜɪʟᴅ 𝐒ᴛᴀᴛᴜs: <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>"""
