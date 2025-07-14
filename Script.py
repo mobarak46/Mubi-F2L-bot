@@ -15,7 +15,7 @@ ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
     
     RESTART_TXT = """
-<b>Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
+<b>𝐁ᴏᴛ 𝐑ᴇsᴛᴀʀᴛᴇᴅ !
 
 📅 𝐃ᴀᴛᴇ : <code>{}</code>
 ⏰ 𝐓ɪᴍᴇ : <code>{}</code>
