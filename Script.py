@@ -20,4 +20,5 @@ Nᴀᴍᴇ - {}"""
 📅 𝐃ᴀᴛᴇ : <code>{}</code>
 ⏰ 𝐓ɪᴍᴇ : <code>{}</code>
 🌐 𝐓ɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-🛠️ 𝐁ᴜɪʟᴅ 𝐒ᴛᴀᴛᴜs: <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>"""
+🛠️ 𝐁ᴜɪʟᴅ 𝐒ᴛᴀᴛᴜs: <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>
+💌 𝐁ᴏᴛ 𝐍ᴀᴍᴇ:-<a href=https://t.me/{}>{}</a> </b></blockquote>"""
