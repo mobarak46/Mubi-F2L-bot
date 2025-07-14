@@ -14,11 +14,11 @@ class script(object):
 ID - <code>{}</code>
 Nᴀᴍᴇ - {}"""
     
-    RESTART_TXT = """
-<b>𝐁ᴏᴛ 𝐑ᴇsᴛᴀʀᴛᴇᴅ !
-
+    RESTART_TXT = """ 
+<b><blockquote>𝐁ᴏᴛ 𝐑ᴇsᴛᴀʀᴛᴇᴅ !
 📅 𝐃ᴀᴛᴇ : <code>{}</code>
 ⏰ 𝐓ɪᴍᴇ : <code>{}</code>
 🌐 𝐓ɪᴍᴇᴢᴏɴᴇ : <code>Asia/Kolkata</code>
-🛠️ 𝐁ᴜɪʟᴅ 𝐒ᴛᴀᴛᴜs: <code>v2.7.1 [ Sᴛᴀʙʟᴇ ]</code></b>
+🛠️ 𝐁ᴜɪʟᴅ 𝐒ᴛᴀᴛᴜs: <code>ᴠ7.𝟶 [ Sᴛᴀʙʟᴇ </code>
 💌 𝐁ᴏᴛ 𝐍ᴀᴍᴇ:-<a href=https://t.me/{}>{}</a> </b></blockquote>"""
+
