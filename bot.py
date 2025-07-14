@@ -32,6 +32,33 @@ from plugins import web_server
 from TechVJ.bot import TechVJBot
 from TechVJ.util.keepalive import ping_server
 from TechVJ.bot.clients import initialize_clients
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+@Client.on_message(filters.command("start"))
+async def start_command(client, message):
+    buttons = InlineKeyboardMarkup([
+        [
+            InlineKeyboardButton("📢 Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/MUBIBOTz"),
+            InlineKeyboardButton("⚡ Sᴜᴘᴘᴏʀᴛ", url="https://t.me/+PtDbTyuIU5g3ZWY1")
+        ],
+        [
+            InlineKeyboardButton("⚙️ Hᴇʟᴘ", callback_data="help"),
+            InlineKeyboardButton("📡 Aʙᴏᴜᴛ", callback_data="about")
+        ]
+    ])
+
+    await message.reply_photo(
+        photo="https://graph.org/file/c68e8b426395c411d1367-f4608594f3f2e5b254.jpg https://graph.org/file/1b8060b43bd20a84489ae-796fb29839ec4ed04b.jpg",  # Replace with your image if needed
+        caption=(
+            "👋 Welcome {},!\n\n"
+            "I am an advanced bot designed to convert files into links and shorten links for files up to 4GB. "
+            "To generate a permanent download and streaming link, just upload any file.\n\n"
+            "⚠️ *Note:* Sending NSFW or explicit content will lead to permanent ban.\n\n"
+            "Let's begin sharing files fast and efficiently! 🚀"
+        ),
+        reply_markup=buttons
+)
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
