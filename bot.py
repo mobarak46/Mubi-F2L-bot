@@ -98,9 +98,17 @@ async def start():
     now = datetime.now(tz)
     current_time = now.strftime("%H:%M:%S %p")
 
-    await TechVJBot.send_message(
-        chat_id=LOG_CHANNEL,
-        text=script.RESTART_TXT.format(today, current_time, "Render Deploy"))
+        # OLD (remove or comment)
+# await TechVJBot.send_message(
+#     chat_id=LOG_CHANNEL,
+#     text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
+# )
+
+# NEW – private DM to admin
+await TechVJBot.send_message(
+    chat_id=ADMIN_ID,
+    text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
+)
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
