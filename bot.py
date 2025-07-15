@@ -26,10 +26,8 @@ from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from Script import script 
 from datetime import date, datetime
-from pyrogram import enums
 from aiohttp import web
 from plugins import web_server
-
 from TechVJ.bot import TechVJBot
 from TechVJ.util.keepalive import ping_server
 from TechVJ.bot.clients import initialize_clients
@@ -50,7 +48,7 @@ async def start_command(client, message):
     ])
 
     await message.reply_photo(
-        photo="https://graph.org/file/c68e8b426395c411d1367-f4608594f3f2e5b254.jpg https://graph.org/file/1b8060b43bd20a84489ae-796fb29839ec4ed04b.jpg",  # Replace with your image if needed
+        photo="https://graph.org/file/c68e8b426395c411d1367-f4608594f3f2e5b254.jpg https://graph.org/file/1b8060b43bd20a84489ae-796fb29839ec4ed04b.jpg",
         caption=(
             "👋 Welcome {},!\n\n"
             "I am an advanced bot designed to convert files into links and shorten links for files up to 4GB. "
@@ -59,13 +57,12 @@ async def start_command(client, message):
             "Let's begin sharing files fast and efficiently! 🚀"
         ),
         reply_markup=buttons
-)
+    )
 
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
 TechVJBot.start()
 loop = asyncio.get_event_loop()
-
 
 async def start():
     print('\n')
@@ -83,35 +80,15 @@ async def start():
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
             print("Tech VJ Imported => " + plugin_name)
+
     if ON_HEROKU:
         asyncio.create_task(ping_server())
+
     me = await TechVJBot.get_me()
     temp.BOT = TechVJBot
     temp.ME = me.id
     temp.U_NAME = me.username
     temp.B_NAME = me.first_name
-    from datetime import datetime, date
-import pytz
-
-async def start():
-    from datetime import datetime
-    now = datetime.now()
-    today = now.strftime("%d/%m/%Y")
-    current_time = now.strftime("%H:%M:%S")
-
-    me = await TechVJBot.get_me()
-    bot_username = me.username
-    bot_name = me.first_name
-
-    for admin in ADMINS:
-        try:
-            await TechVJBot.send_message(
-    chat_id=admin,
-    text=RESTART_TXT.format(today, current_time, bot_username, bot_name),
-    parse_mode=enums.ParseMode.HTML
-            )
-        except Exception as e:
-            print(f"Failed to send restart message to admin {admin}: {e}")
 
     # Start web server
     app_runner = web.AppRunner(await web_server())
@@ -125,4 +102,3 @@ if __name__ == '__main__':
         loop.run_until_complete(start())
     except KeyboardInterrupt:
         logging.info('Service Stopped Bye 👋')
-
