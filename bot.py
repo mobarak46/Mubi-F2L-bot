@@ -112,7 +112,7 @@ async def start():
     # Send restart message privately to admins
     for admin in ADMINS:
         try:
-            await app.send_message(
+            await TechVJBot.send_message(
                 chat_id=admin,
                 text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
             )
