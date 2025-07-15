@@ -25,7 +25,8 @@ from info import *
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from Script import script 
-from datetime import date, datetime 
+from datetime import date, datetime
+from pyrogram import enums
 from aiohttp import web
 from plugins import web_server
 
@@ -105,9 +106,9 @@ async def start():
     for admin in ADMINS:
         try:
             await TechVJBot.send_message(
-                chat_id=admin,
-                text=script.RESTART_TXT.format(today, current_time, bot_username, bot_name),
-                parse_mode="HTML"
+    chat_id=admin,
+    text=RESTART_TXT.format(today, current_time, bot_username, bot_name),
+    parse_mode=enums.ParseMode.HTML
             )
         except Exception as e:
             print(f"Failed to send restart message to admin {admin}: {e}")
