@@ -109,7 +109,8 @@ await TechVJBot.send_message(
     chat_id=ADMIN_ID,
     text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
 )
-    app = web.AppRunner(await web_server())
+
+   app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
     await web.TCPSite(app, bind_address, PORT).start()
