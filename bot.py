@@ -93,28 +93,21 @@ async def start():
 import pytz
 
 async def start():
-    tz = pytz.timezone('Asia/Kolkata')
-    today = date.today()
-    now = datetime.now(tz)
-    current_time = now.strftime("%H:%M:%S %p")
+    from datetime import datetime
+    now = datetime.now()
+    today = now.strftime("%d/%m/%Y")
+    current_time = now.strftime("%H:%M:%S")
 
-        # OLD (remove or comment)
-# await TechVJBot.send_message(
-#     chat_id=LOG_CHANNEL,
-#     text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
-# )
+    me = await TechVJBot.get_me()
+    bot_username = me.username
+    bot_name = me.first_name
 
-# NEW – private DM to admin
-async def start():
-    today = datetime.now().strftime("%d/%m/%Y")
-    current_time = datetime.now().strftime("%H:%M:%S")
-
-    # Send restart message privately to admins
     for admin in ADMINS:
         try:
             await TechVJBot.send_message(
                 chat_id=admin,
-                text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
+                text=script.RESTART_TXT.format(today, current_time, bot_username, bot_name),
+                parse_mode=enums.ParseMode.HTML
             )
         except Exception as e:
             print(f"Failed to send restart message to admin {admin}: {e}")
