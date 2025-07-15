@@ -107,7 +107,7 @@ async def start():
             await TechVJBot.send_message(
                 chat_id=admin,
                 text=script.RESTART_TXT.format(today, current_time, bot_username, bot_name),
-                parse_mode=enums.ParseMode.HTML
+                parse_mode="HTML"
             )
         except Exception as e:
             print(f"Failed to send restart message to admin {admin}: {e}")
