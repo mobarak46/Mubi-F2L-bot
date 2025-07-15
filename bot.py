@@ -105,16 +105,25 @@ async def start():
 # )
 
 # NEW – private DM to admin
-await TechVJBot.send_message(
-    chat_id=ADMIN_ID,
-    text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
-)
+async def start():
+    today = datetime.now().strftime("%d/%m/%Y")
+    current_time = datetime.now().strftime("%H:%M:%S")
 
-   app = web.AppRunner(await web_server())
-    await app.setup()
-    bind_address = "0.0.0.0"
-    await web.TCPSite(app, bind_address, PORT).start()
-    await idle()
+    # Send restart message privately to admins
+    for admin in ADMINS:
+        try:
+            await app.send_message(
+                chat_id=admin,
+                text=script.RESTART_TXT.format(today, current_time, "Render Deploy")
+            )
+        except Exception as e:
+            print(f"Failed to send restart message to admin {admin}: {e}")
+
+    # Start web server
+    app_runner = web.AppRunner(await web_server())
+    await app_runner.setup()
+    site = web.TCPSite(app_runner, "0.0.0.0", PORT)
+    await site.start()
 
 
 if __name__ == '__main__':
